@@ -1,7 +1,21 @@
+# Force GitHub to detect Dart as the primary language
 *.dart linguist-detectable=true
+
+# Ignore C++, CMake, and other native files
 *.cpp linguist-detectable=false
 *.h linguist-detectable=false
 *.c linguist-detectable=false
+*.mm linguist-detectable=false
+*.swift linguist-detectable=false
 *.m linguist-detectable=false
+*.cmake linguist-detectable=false
+*.gradle linguist-detectable=false
+
+# Ignore entire native directories
 android/** linguist-vendored
 ios/** linguist-vendored
+linux/** linguist-vendored
+macos/** linguist-vendored
+windows/** linguist-vendored
+web/** linguist-vendored
+
