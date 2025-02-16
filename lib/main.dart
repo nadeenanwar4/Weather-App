@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:new_weather_app/views/home_view.dart';
 import 'package:new_weather_app/views/search_view.dart';
 
-void main() {
+void main() async {
+  await dotenv.load(); // Load the .env file
   runApp(const WeatherApp());
 }
 
