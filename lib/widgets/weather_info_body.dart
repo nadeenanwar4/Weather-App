@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_weather_app/models/weather_icon_model.dart';
 import 'package:new_weather_app/models/weather_model.dart';
 import 'package:new_weather_app/views/search_view.dart';
 
@@ -13,14 +14,15 @@ class WeatherInfoBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            weatherModel!.cityName,
+            weatherModel!.cityName.replaceFirst(weatherModel!.cityName[0],
+                weatherModel!.cityName[0].toUpperCase()),
             style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 32,
             ),
           ),
           Text(
-            "updated at ${weatherModel!.updatedTime}",
+            "updated at ${weatherModel!.updatedTime.substring(0, 5)}",
             style: const TextStyle(
               fontSize: 24,
             ),
@@ -31,9 +33,8 @@ class WeatherInfoBody extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // IconButton(onPressed: () {}, icon: Text(weatherModel!.icon)),
               Image.asset(
-                weatherModel!.getIconPath(iconID: weatherModel!.icon),
+                WeatherIconModel.getIconPath(iconID: weatherModel?.icon),
               ),
               Text(
                 weatherModel!.temp.toString(),

@@ -9,8 +9,6 @@ class WeatherService {
       "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline";
   final String apiKey = dotenv.env['API_KEY']!;
 
-  //final String apiKey = "SJBNB5Z85TGJCKSAHRELV8UYS";
-
   Future<WeatherModel> getWeatherData({required String cityName}) async {
     try {
       Response response = await dio.get(
